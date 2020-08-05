@@ -3,13 +3,16 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Home from './screens/Home'
+import CreateEmployee from './screens/CreateEmployee'
 
 import Contants from 'expo-constants';
+import CreateEmployye from './screens/CreateEmployee';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Home />
+      {/* <Home /> */}
+      <CreateEmployye />
       <StatusBar style="auto" />
     </View>
   );
