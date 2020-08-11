@@ -2,17 +2,19 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import Home from './screens/Home'
-import CreateEmployee from './screens/CreateEmployee'
+import Home from './screens/Home';
+import CreateEmployee from './screens/CreateEmployee';
+import Profile from './screens/Profile';
 
 import Contants from 'expo-constants';
-import CreateEmployye from './screens/CreateEmployee';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <Home /> */}
-      <CreateEmployye />
+      {/* <CreateEmployee /> */}
+      <Profile />
       <StatusBar style="auto" />
     </View>
   );
