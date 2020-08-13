@@ -11,18 +11,19 @@ import { Card, FAB } from 'react-native-paper';
     )
 } */
 
-const Home=()=>{
+const Home=({navigation})=>{
     const data = [
         {id:1, nombre:'Franz', cargo:'Programador'},
         {id:2, nombre:'Ana', cargo:'Contadora'},
         {id:3, nombre:'Juan', cargo:'Abogado'},
         {id:4, nombre:'Maria', cargo:'Secretaria'},
-        {id:5, nombre:'Franz', cargo:'Programador'},
-        {id:6, nombre:'Ana', cargo:'Contadora'},
     ]
     const renderList = ((item)=>{
         return (
-            <Card style={ styles.mycard }>
+            <Card 
+            style={ styles.mycard }
+            onPress={() => navigation.navigate('Profile')}
+            >
                 <View style={ styles.cardView }>
                     <Image 
                         style={{ width:60, height:60, borderRadius:30 }}
@@ -38,7 +39,7 @@ const Home=()=>{
         )
     })
     return(
-        <View>
+        <View style={{ flex:1 }}>
             <FlatList 
                 data = { data }
                 renderItem = {({item}) => {
@@ -48,11 +49,11 @@ const Home=()=>{
             />
 
             <FAB
+                onPress={() => navigation.navigate('CreateEmployee')}
                 style={styles.fab}
                 small={ false }
                 icon="plus"
-                theme={{ colors:{accent:"#e89161"} }}
-                onPress={() => console.log('Pressed')}
+                theme={{ colors:{accent:"#006aff"} }}
             />
 
             {/* { renderList } */}

@@ -10,7 +10,7 @@ const Profile=()=>{
     return(
         <View style={ styles.root }>
             <LinearGradient
-            colors={['#47a659','#e3ffe8']}
+            colors={['#006aff','#d1efff']}
             style={{ height:'20%' }}
             />
             <View style={{ alignItems:'center' }}>
@@ -25,19 +25,19 @@ const Profile=()=>{
             </View>
             <Card style={styles.myCard}>
                 <View style={styles.cardContent}>
-                    <MaterialIcons name="email" size={35} color="#47a659" />
+                    <MaterialIcons name="email" size={35} color="#006aff" />
                     <Text style={styles.myText}>franz@mail.com</Text>
                 </View>
             </Card>
             <Card style={styles.myCard}>
                 <View style={styles.cardContent}>
-                    <Entypo name="phone" size={35} color="#47a659" />
+                    <Entypo name="phone" size={35} color="#006aff" />
                     <Text style={styles.myText}>70329171</Text>
                 </View>
             </Card>
             <Card style={styles.myCard}>
                 <View style={styles.cardContent}>
-                    <MaterialIcons name="attach-money" size={35} color="#47a659" />
+                    <MaterialIcons name="attach-money" size={35} color="#006aff" />
                     <Text style={styles.myText}>3000 bs</Text>
                 </View>
             </Card>
