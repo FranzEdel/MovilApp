@@ -6,7 +6,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Title, Card, Button } from 'react-native-paper';
 import { MaterialIcons, Entypo } from '@expo/vector-icons'; 
 
-const Profile=()=>{
+const Profile=(props)=>{
+
+    const {id,nombre,email,salario,telefono,cargo,foto} = props.route.params.item
+
     return(
         <View style={ styles.root }>
             <LinearGradient
@@ -16,29 +19,29 @@ const Profile=()=>{
             <View style={{ alignItems:'center' }}>
                 <Image 
                 style={{ width:150,height:150,borderRadius:150/2,marginTop:-75 }}
-                source={{ uri:'https://images.unsplash.com/photo-1550927312-3af3c565011f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80' }}
+                source={{ uri: foto }}
                 />
             </View>
             <View style={{ alignItems:'center',margin:15 }}>
-                <Title>Franz Edel</Title>
-                <Text style={{ fontSize:17 }}>Web Developer</Text>
+                <Title>{ nombre }</Title>
+                <Text style={{ fontSize:17 }}>{ cargo }</Text>
             </View>
             <Card style={styles.myCard}>
                 <View style={styles.cardContent}>
                     <MaterialIcons name="email" size={35} color="#006aff" />
-                    <Text style={styles.myText}>franz@mail.com</Text>
+                    <Text style={styles.myText}>{ email }</Text>
                 </View>
             </Card>
             <Card style={styles.myCard}>
                 <View style={styles.cardContent}>
                     <Entypo name="phone" size={35} color="#006aff" />
-                    <Text style={styles.myText}>70329171</Text>
+                    <Text style={styles.myText}>{ telefono }</Text>
                 </View>
             </Card>
             <Card style={styles.myCard}>
                 <View style={styles.cardContent}>
                     <MaterialIcons name="attach-money" size={35} color="#006aff" />
-                    <Text style={styles.myText}>3000 bs</Text>
+                    <Text style={styles.myText}>{ salario }</Text>
                 </View>
             </Card>
             <View style={{ flexDirection:'row',justifyContent:'space-around',padding:10 }}>

@@ -13,21 +13,21 @@ import { Card, FAB } from 'react-native-paper';
 
 const Home=({navigation})=>{
     const data = [
-        {id:1, nombre:'Franz', cargo:'Programador'},
-        {id:2, nombre:'Ana', cargo:'Contadora'},
-        {id:3, nombre:'Juan', cargo:'Abogado'},
-        {id:4, nombre:'Maria', cargo:'Secretaria'},
+        {id:'1', nombre:'Franz',email:'franz@mail.com',salario:'3000',telefono:'123', cargo:'Programador',foto:'https://images.unsplash.com/photo-1569466896818-335b1bedfcce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80'},
+        {id:'2', nombre:'Ana',email:'ana@mail.com',salario:'2500',telefono:'456', cargo:'Contadora',foto:'https://images.unsplash.com/photo-1567336273898-ebbf9eb3c3bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'},
+        {id:'3', nombre:'Juan',email:'juan@mail.com',salario:'2000',telefono:'789', cargo:'Abogado',foto:'https://images.unsplash.com/photo-1595399874399-10f2444c4eb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'},
+        {id:'4', nombre:'Maria',email:'maria@mail.com',salario:'1500',telefono:'987', cargo:'Secretaria',foto:'https://images.unsplash.com/photo-1585925130019-eeafcd31b7f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'},
     ]
     const renderList = ((item)=>{
         return (
             <Card 
             style={ styles.mycard }
-            onPress={() => navigation.navigate('Profile')}
+            onPress={() => navigation.navigate('Profile',{ item })}
             >
                 <View style={ styles.cardView }>
                     <Image 
                         style={{ width:60, height:60, borderRadius:30 }}
-                        source={{ uri:'https://images.unsplash.com/photo-1569466896818-335b1bedfcce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80' }}
+                        source={{ uri: item.foto  }}
 
                     />
                     <View style={{ marginLeft:10 }}>
